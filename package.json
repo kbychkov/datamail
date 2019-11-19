@@ -1,0 +1,24 @@
+{
+  "name": "datamail",
+  "version": "0.0.0",
+  "description": "Data-driven emails engine",
+  "keywords": [
+    "liquid",
+    "mjml",
+    "mail",
+    "render"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Konstantin Bychkov",
+    "email": "hello@kbychkov.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kbychkov/datamail.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "index.js"
+}
