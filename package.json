@@ -1,6 +1,6 @@
 {
   "name": "datamail",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Data-driven emails engine",
   "keywords": [
     "liquid",
@@ -20,5 +20,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "main": "index.js"
+  "bin": {
+    "datamail": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "main": "./lib/index.js",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "commander": "^4.0.1",
+    "liquidjs": "^9.4.2",
+    "mjml": "^4.5.1"
+  }
 }

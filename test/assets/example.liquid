@@ -1,0 +1,15 @@
+{% import repositories from 'https://api.github.com/search/repositories?q=liquid+template+engine&per_page=5' %}
+
+<mjml>
+  <mj-body>
+    <mj-section background-color="#fff">
+      <mj-column>
+        <mj-text font-size="20px">Top 5 Liquid Template Engines on GitHub</mj-text>
+        {% for item in repositories.items %}
+          <mj-text><a href="{{ item.url }}">{{ item.full_name }}</a></mj-text>
+          <mj-text padding-top="0">{{ item.description }}</mj-text>
+        {% endfor %}
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
