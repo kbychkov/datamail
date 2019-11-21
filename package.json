@@ -18,7 +18,8 @@
     "url": "https://github.com/kbychkov/datamail.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint",
+    "lint": "eslint bin/** lib/**"
   },
   "bin": {
     "datamail": "./bin/cli.js"
@@ -33,5 +34,8 @@
     "commander": "^4.0.1",
     "liquidjs": "^9.4.2",
     "mjml": "^4.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0"
   }
 }
