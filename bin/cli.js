@@ -9,8 +9,9 @@ const datamail = require('../lib');
 let inputFile;
 
 program
-  .version(pkg.version)
-  .description('Data-driven emails engine');
+  .description('Data-driven emails engine')
+  .option('--mjml', 'apply MJML post-processing')
+  .version(pkg.version, '-v, --version');
 
 program
   .arguments('<file>')
@@ -37,7 +38,7 @@ fs.readFile(inputFile, 'utf8', async (err, data) => {
     root: path.dirname(inputFile)
   }
 
-  const html = await datamail(data, { mjml: true, liquid });
+  const html = await datamail(data, { mjml: program.mjml, liquid });
 
   fs.writeFileSync(replaceExtension(inputFile), html);
 });
