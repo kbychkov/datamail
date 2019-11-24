@@ -3,6 +3,7 @@
 const program = require('commander');
 const pkg = require('../package.json');
 const fs = require('fs');
+const path = require('path');
 const datamail = require('../lib');
 
 let inputFile;
@@ -32,7 +33,11 @@ fs.readFile(inputFile, 'utf8', async (err, data) => {
     process.exit(1);
   }
 
-  const html = await datamail(data, { mjml: true });
+  const liquid = {
+    root: path.dirname(inputFile)
+  }
+
+  const html = await datamail(data, { mjml: true, liquid });
 
   fs.writeFileSync(replaceExtension(inputFile), html);
 });

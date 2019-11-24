@@ -6,8 +6,11 @@
       <mj-column>
         <mj-text font-size="20px">Top 5 Liquid Template Engines on GitHub</mj-text>
         {% for item in repositories.items %}
-          <mj-text><a href="{{ item.url }}">{{ item.full_name }}</a></mj-text>
-          <mj-text padding-top="0">{{ item.description }}</mj-text>
+          {% include 'item.liquid',
+            url: item.url,
+            name: item.full_name,
+            description: item.description
+          %}
         {% endfor %}
       </mj-column>
     </mj-section>
