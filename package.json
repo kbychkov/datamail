@@ -30,7 +30,7 @@
   ],
   "main": "./lib/index.js",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "commander": "^4.0.1",
     "liquidjs": "^9.4.2",
     "mjml": "^4.5.1"
